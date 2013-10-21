@@ -8,7 +8,7 @@
 VERSION=0.3.2
 
 # Only run the following if this is the first time running.
-if [ ! -f /var/log/firsttime ];
+if [ ! -f /var/log/firsttime ]
 then
 	touch /var/log/firsttime
 	sudo apt-get update
@@ -19,10 +19,10 @@ then
 	sudo apt-get update
 	sudo apt-get -y install nodejs
 
-	# Using screen to run Ghost in the background.
-	sudo apt-get install screen
-
 	# Get Ghost and unzip it.
+	sudo mkdir /var/www
+	sudo mkdir /var/www/ghost
+	cd /var/www/ghost
 	sudo apt-get install unzip
 	wget https://en.ghost.org/zip/ghost-$VERSION.zip
 	unzip ghost-$VERSION.zip
@@ -35,5 +35,9 @@ then
 	sudo npm install --production
 fi
 
-# Comment this out if you do not want to Ghost to automatically start.
-screen -S ghost -m -d sudo npm start
+# Run via an INIT job.
+if [ ! -f /etc/init/ghost.conf ]
+then
+	sudo cp /home/vagrant/shared/ghost.conf /etc/init/
+	sudo service ghost start
+fi

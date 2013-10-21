@@ -1,0 +1,3 @@
+.vagrant/
+shared/.DS_Store
+shared/ghost.log
