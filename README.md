@@ -22,7 +22,7 @@ Instructions
 Notes
 -----
 
-- Ghost will automatically start via an INIT job.  You can `sudo service ghost stop`, `sudo service ghost restart` and `sudo service ghost start` it from the vagrant box shell (`vagrant ssh`). 
+- Ghost will automatically start via an INIT job.  You can `sudo service ghost stop`, `sudo service ghost start`, and `sudo service ghost restart` it from the vagrant box shell (`vagrant ssh`). 
 - You can view ghost logs in the shared folder.  Locally = `vagrant-ghost/shared/ghost.log`, Vagrant = `/home/vagrant/shared/ghost.log`
 - You can choose the version of Ghost to download and run by changing `VERSION` on line 8 of `boostrap.sh` (this has only been tested with `0.3.2`).
 - If you don't have the precise32 box on your machine, it will automatically be downloaded.  This can take a few minutes the first time it runs.
