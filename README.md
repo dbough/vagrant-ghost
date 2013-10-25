@@ -1,7 +1,7 @@
 vagrant-ghost
 =============
 
-Vagrant config for the Ghost blogging platform. (https://en.ghost.org/)
+Vagrant config for the Ghost blogging platform. (https://ghost.org/)
 
 Requirements
 ------------
