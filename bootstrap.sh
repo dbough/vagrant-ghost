@@ -5,7 +5,7 @@
 
 # Change this to the version of Ghost you want to install.
 # Untested with versions outside of 0.3.2.
-VERSION=0.3.2
+VERSION=0.4.0
 
 # Only run the following if this is the first time running.
 if [ ! -f /var/log/firsttime ]
